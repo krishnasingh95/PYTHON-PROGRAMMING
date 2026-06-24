@@ -388,6 +388,69 @@ def palindrome(s):
 print(palindrome("madam"))
 print(palindrome("python"))
 print(palindrome("mam"))
-    
+
+#zip   zip() combines multiple iterable element wise
+#syntax = zip(iterable1,iterable2....)
+
+names =["krishna","aman","sakshi"]
+ages=[21,22,34]
+result=zip(names,ages)
+print(list(result))
+
+#example 2: looping through two list
+
+names=["krishna","aman","sakshi"]
+marks=[21,98,67]
+
+for name,mark in zip(names,marks):
+    print(name,mark)
+
+#creating a dictionary
+
+keys=["name","age","city"]
+values=["krishna",21,"Azamgarh"]
+student= dict(zip(keys,values))
+print(student)
+
+#unequal lengths
+
+a=[1,2,3]
+b=[20,30]
+result=list(zip(a,b))
+print(result)  # zip() stops when the shortest iterable ends
+
+#enumerate() used when you both need  the index and value
+
+names=["krishna","aman","amit"]
+for index,name in enumerate(names,start=1):
+    print(index,name)
+
+names=["krishna","aman","diksha"]
+print(list(enumerate(names)))
+
+#any()  returns true if atleast one element is true
+
+numbers=[False,True,False]
+print(any(numbers))
 
 
+names=["","","krishna"]
+print(any(names))   # empty sstrings are treated as false
+
+
+numbers=[1,2,4,6,7,8]
+result=any(x % 2 == 0 for x in numbers)
+print(result)
+
+#all()  #returns true only if all element is true
+
+numbers=[True,True,True]
+print(all(numbers))
+
+numbers=[2,4,6,8]
+result=all(x >0 for x in numbers)
+print(result)    #true
+
+numbers=[2,-4,-6,8]
+result=all(x >0 for x in numbers)
+print(result)    #false
